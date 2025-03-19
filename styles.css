@@ -1,0 +1,154 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap'); */
+
+/* 1. General resets & typography */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.4;
+}
+
+
+/* 2. Split layout container */
+.split-layout {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh; /* so it fills full screen height */
+}
+
+/* 3. Left panel: image container */
+/* .left-panel {
+    flex: 4; 
+    overflow: hidden;
+} */
+
+/* .left-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit:none;
+    display: block;
+} */
+
+.left-panel {
+    flex: 3.5;
+    background-image: url("images/2_desert_moon_landing_page.jpg");
+    background-position:top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    filter: grayscale(75%);
+  }
+  
+.right-image-panel {
+    flex: 4;
+    background-image: url("images/berlin_me_n_moon.jpg");
+    background-position:top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+/* 4. Right panel: Text and content */
+.right-panel {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5rem;
+    background-color: #fff;
+}
+
+.right-panel h1 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+}
+
+.subtitle {
+    width: 84%;
+    text-align: right; 
+    font-size: 2rem;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 2rem;
+    font-family: 'Dancing Script', cursive;
+    /* font-family: 'Allura', cursive; */
+    /* font-family: 'Great Vibes', cursive; */
+}
+
+.short-bio {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 500px;  
+    color: #777;
+    /*limit text width for readability if you have more text */
+    /* width: 90%;  */
+    /* limit text width for readability if you have more text */
+}
+
+/* 5. GO TO WEBSITE button */
+.goto-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out
+}
+
+.goto-button:hover {
+    background-color: #444;
+}
+
+/* 6. Social icons / links */
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    /* margin-top: 1rem; */
+}
+
+.social-icons a {
+    color: #333;
+    text-decoration: none;
+    /* font-size: 0.9; */
+    transition: color 0.2s ease-in-out;
+}
+
+.social-icons a:hover {
+    /* text-decoration: underline; */
+    color: #555;
+}
+
+/* Optionally, if you want bigger icons, you can override the inline width/height: */
+/* .social-icons a svg {
+    width: 30px;
+    height: 30px;
+  } */
+  
+
+
+/* 7. Responsive adjustments (for smaller screens) */
+@media screen and (max-width: 768px) {
+    .split-layout {
+        flex-direction: column; /* stack vertically on mobile */
+    }
+
+    .left-panel, .right-panel {
+        flex: unset; /* remove flex sizing so each takes full width when stacked */
+        width: 100%;
+        height: auto;
+    }
+
+    .left-panel img {
+        height: auto;
+    }
+}

@@ -152,3 +152,129 @@ body {
         height: auto;
     }
 }
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;     /* Spread items left and right */
+    align-items: center;    /* Vertically center the items */
+    background: #111;
+    padding: 1rem 2rem;
+}
+
+/* My Name/brand (left side) */
+.navbar-brand {
+    font-size: 1.6rem;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+}
+
+.navbar-brand a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar-brand a:hover {
+    text-decoration:double;
+    /* color: #B8AEA3; */
+    color: #BCC9CC;
+}
+
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content:flex-end;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    margin: 0 1rem;
+}
+
+.nav-list a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-list a:hover {
+    text-decoration: underline;
+}
+
+
+/* BACKGROUND */
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(to top, #2f3b52, #1a2734);       */
+    /* Gradient sky effect */
+    background: linear-gradient(to top, #4a5d6a, #2f3b44);
+    z-index: -1;    /* Place the background behind the content */
+}
+
+.moon {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+    filter: blur(2px); /* Soft glow effect */
+}
+
+
+.content {
+    position: relative; /* Ensure it stays on top of the background */
+    z-index: 1;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+
+
+.snow {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Snow will not interact with clicks */
+    z-index: 1;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px; /* Start position above the screen */
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall linear infinite;
+    animation-duration: 10s;
+}
+
+
+
+/* Snowflake animation */
+@keyframes fall {
+    0% {
+        top: -10px;
+        left: random(0, 100%);
+        opacity: 1;
+    }
+    100% {
+        top: 100vh; /* Fall to the bottom of the screen */
+        opacity: 0; /* Fade out as it falls */
+    }
+}
